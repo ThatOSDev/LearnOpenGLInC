@@ -89,6 +89,9 @@ int main()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
     glEnableVertexAttribArray(2);
 
+    // For allowing transparency if the image has it and if glTexImage2D is set for it.
+    // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    // glEnable( GL_BLEND );
 
     // load and create a texture
     // -------------------------
@@ -107,7 +110,12 @@ int main()
     unsigned char *data = stbi_load("resources/textures/container.jpg", &width, &height, &nrChannels, 0);
     if (data)
     {
+		// This line is if there is no transparency.
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+
+		// Uncomment this line to enable transparency (32-Bit Images). Disable the above line.
+		// glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+		
         glGenerateMipmap(GL_TEXTURE_2D);
     }
     else
