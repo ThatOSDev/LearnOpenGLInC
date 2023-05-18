@@ -20,7 +20,7 @@ I have converted so far :
 * 7.in_practice
   
 **NOTES**  
-* GLAD version 1 is used in the source code. However, once you are used to how this all works, you really should upgrade to GLAD 2. https://gen.glad.sh/  
+* GLAD version 1 is used in the source code. However, once you are used to how this all works, you really should upgrade to GLAD 2. https://gen.glad.sh/  GLAD 2 has been added to the libs folder.  
 * Do to the libraries used to get this to work, C99 is the oldest version that you can use. C89 and C90 failed because of those libraries.  
 * I tried to stick fairly close to the original author's libraries and folder structures, so that it would be easier to follow along his tutorials.  
 * I was finally able to get Assimp working with the help of Nick Wessing's source code. With that I was able to figure out how assimp works. I had never used assimp before. Nick's Github : https://github.com/nwessing/ Also this means I was not using the original shader files that came from LearnOpenGL. However the backpack asset is being used.  Also, the Assimp library supplied here works with codeblocks / mingwx64 ( gcc ). It should work with Visual Studio as well. But I have not tested that.  
