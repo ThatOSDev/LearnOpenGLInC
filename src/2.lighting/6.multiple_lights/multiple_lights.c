@@ -317,7 +317,7 @@ int main()
              glm_mat4_identity(model);
              glm_translate(model, pointLightPositions[i]);
              glm_scale(model, (vec3){0.2f, 0.2f, 0.2f}); // Make it a smaller cube
-             setMat4(lightCubeVAO, "model", model);
+             setMat4(lightCubeShaderID, "model", model);
              glDrawArrays(GL_TRIANGLES, 0, 36);
          }
 
